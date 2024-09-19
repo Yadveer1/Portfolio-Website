@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    #check, .cb{
+        display: none;
+    }
+    .main_box {
+        background: url("back.png");
+        height: 100vh; 
+        background-size: cover;
+        display: flex;
+    }
+    /* ABOUT */
+    .about {
+        font-family: "Poppins", sans-serif;
+        position:absolute;
+        right: 370px;
+        width: 900px;
+        height: fit-content;
+        background-color: rgba(255, 255, 255,0.65);
+        transition: all 0.5s ease-in-out;
+        border-radius: 15px;
+        top: 100px
+    }
+    .cb:checked ~ .about {
+        top: 10px;
+    }
+    .about:hover {
+        cursor: default;
+    }
+    .about h1{
+        margin: 5px 0 0 10px;
+    }
+    .about h3,.about p {
+        margin-left: 10px;
+        line-height: 23px;
+    }
+    .about p {
+        margin-bottom: 5px;
+    }
+    /* END */
+    .sidebar_menu {
+        left: -360px;
+        position: fixed;
+        width: 350px;
+        background-color: rgba(255, 255, 255, 0.4);
+        height: 100vh;
+        transition: all 0.5s ease-in-out;
+    }
+    .sidebar_menu .logo a{
+        color: black;
+        text-decoration: none;
+        font-size: 30px;
+        font-family: "Poppins", sans-serif;
+        position: absolute;
+        left: 130px;
+        top: 20px;
+        border-radius: 20px;
+        padding: 0 10px 0;
+        cursor: default;
+    }
+    .btn_one {
+        position: absolute;
+        font-size: 35px;
+        margin: 10px;
+        left: 16px;
+        line-height: 60px;
+        color: red
+    }
+    .btn_one label i,.btn_two label i {
+        cursor: pointer;
+    }
+    .btn_two {
+        font-size: 30px;
+        position: absolute;
+        left: 320px;
+    }
+    .menu i {
+        padding-top: 4px;
+    }
+    .menu ul li p {
+        padding-left: 10px;
+        color: black;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+    }
+    .menu ul li div {
+        display: flex;
+    }
+    .menu ul li div:hover {
+        cursor: pointer;
+    }
+    .sidebar_menu .menu {
+        position: absolute;
+        /* color: white; */
+        width: 100%;
+        top: 80px;
+    }
+    .sidebar_menu .menu li {
+        border-radius: 8px;
+        padding: 12px 25px;
+        margin-top: 8px;
+    }
+    /* SOCIAL MEDIA ICONS */
+    .social_media {
+        position: absolute;
+        top: 500px;
+        left: 120px;
+    }
+    .social_media a{
+        color: rgba(0, 0, 0, 0.7);
+        font-size: 30px;
+        padding: 5px;
+    }
+    .social_media a:hover{
+        color: rgb(0,0,0);
+    }
+    .social_media a i:hover {
+        transform: scale(1.35);
+        transition: 0.3s ease-in-out;
+    }
+    /* END */
+    .sidebar_menu .menu ul li:hover {
+        box-shadow: 0px 0px 8px blue;
+        transition: 0.4s;
+    }
+    #check:checked ~ .sidebar_menu {
+        left:0;
+    }
+    #check:checked ~ .btn_one {
+        opacity: 0;
+    }
+    #check:checked ~ .sidebar_menu .btn_two{
+        opacity: 1;
+    }
+    #check:checked ~ .about{
+        right: 135px;
+    }
+    #check:checked ~ .about .hide {
+        display: none;
+    }
+    .options {
+        display: none;
+        margin: 10px;
+        position: absolute;
+        width: 76%;
+        background-color: rgba(129, 169, 250, 0.5);
+        bottom: 0px;
+        left:-1800px;
+        height: fit-content;
+        transition: all 0.5s ease-in-out;
+        border-radius: 15px;
+    }
+    #check:checked ~ .options {
+        display: block;
+    }
+    .cb:checked ~ .options{
+        left: 350px;
+    }
+    .content {
+        left: -900px;
+        padding-top: 5px;
+        display: none;
+        font-family: "Poppins", sans-serif;
+        font-weight: 400;
+    }
+    .cb:checked ~ .content {
+        left: 0px;
+    }
+    .subcontent {
+        overflow: auto;
+    }
+    .subcontent:hover {
+        border-radius: 10px;
+    }
+    .subcontent:hover {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 10px;
+    }
+    a {
+        text-decoration: none;
+    }
+    .subcontent a:hover {
+        color: blueviolet;
+    }
+
+    .subcontent h3 {
+        padding: 5px 0 0 5px;
+    }
+    .subcontent p, .subcontent a {
+        padding: 0 0 5px 5px;
+    }
+    .subcontent {
+        margin: 10px;
+    }
+
+    #check1:checked ~ .options .skills{
+        display: contents;
+        opacity: 1;
+    }
+    #check2:checked ~ .options .experience{
+        display: contents;
+        opacity: 1;
+    }
+    #check3:checked ~ .options .project{
+        opacity: 1;
+        display: contents;
+    }
+    #check4:checked ~ .options .contact{
+        display: contents;
+        opacity: 1;
+    }
+    #check5:checked ~ .options .github{
+        display: contents;
+        opacity: 1;
+    }
+  </style>
+  <body>
+    <div class="main_box">
+      <input type="checkbox" id="check" />
+      <input type="checkbox" class="cb" id="check1" />
+      <input type="checkbox" class="cb" id="check2" />
+      <input type="checkbox" class="cb" id="check3" />
+      <input type="checkbox" class="cb" id="check5" />
+      <input type="checkbox" class="cb" id="check4" />
+      <div class="about">
+        <h1>Yadveer Singh Pawar</h1>
+        <h3>About</h3>
+        <p>I am a passionate and motivated web developer currently enhancing my skills in front-end and back-end technologies. My journey in web development began with a curiosity about how websites are built and a drive to create user-friendly, responsive, and dynamic web applications.</p>
+        <p class="hide">What I'm Learning in the my 3rd Semester:<br>
+          Languages: HTML, CSS, JavaScript, SQL<br>
+          Frameworks/Libraries: React, Node.js, Express, Bootstrap, Tailwind CSS, MongoDB<br>
+          Tools: GitHub, VS Code</p>
+        <p class="hide">What Excites Me:<br>
+          I am particularly excited about the intersection of design and functionality in web development. Creating visually appealing, yet highly functional websites is a challenge I am eager to master.
+        </p>
+        <p class="hide">My Goals:<br>
+          I am committed to continuous learning, My goal is to become a full-stack developer and contribute to innovative projects that make a difference.
+        </p>
+      </div>
+      <div class="btn_one">
+        <label for="check">
+          <i class="fa-solid fa-bars"></i>
+        </label>
+      </div>
+
+      <div class="sidebar_menu">
+        <div class="logo">
+          <a href="#">Menu</a>
+        </div>
+
+        <div class="btn_two">
+          <label for="check" style="color: black">
+            <i class="fa-solid fa-xmark"></i>
+          </label>
+        </div>
+
+        <div class="menu">
+          <ul>
+            <li>
+              <label for="check1">
+                <div>
+                  <i class="fa-solid fa-book"></i>
+                  <p>Skills</p>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label for="check2">
+                <div>
+                  <i class="fa-solid fa-timeline"></i>
+                  <p>Experience</p>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label for="check3">
+                <div>
+                  <i class="fa-solid fa-photo-film"></i>
+                  <p>Projects</p>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label for="check4">
+                <div>
+                  <i class="fa-solid fa-phone"></i>
+                  <p>Contact</p>
+                </div>
+              </label>
+            </li>
+            <li>
+              <label for="check5">
+                <div>
+                  <i class="fa-brands fa-github"></i>
+                  <p>Github</p>
+                </div>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <div class="social_media">
+          <div>
+            <a class="git" href="https://github.com/Yadveer1"><i class="fa-brands fa-github"></i></i></i></a>
+            <a class="link" href="https://www.linkedin.com/in/yadveersingh"><i class="fa-brands fa-linkedin-in"></i></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="options">
+        <div class="content skills">
+          <div class="subcontent">
+            <h3>Skills:-</h3>
+            <p>Currently a beginner Web developer</p>
+          </div>
+        </div>
+
+        <div class="content experience">
+          <div class="subcontent">
+            <h3>Experience:-</h3>
+            <p>I had the opportunity to lead a team of four in the NEXGen Engineers Quiz competition, where we successfully ranked among the top 5 teams out of 20. As the team leader, I coordinated our efforts and helped drive our strategy, showcasing teamwork, leadership, and problem-solving skills under pressure.</p>
+          </div>
+        </div>
+
+        <div class="content project">
+          <div class="subcontent">
+            <h3>Project:-</h3>
+            <p>I developed a Spotify clone website utilizing CSS and JavaScript, replicating the core design of the music platform. This project enhanced my skills in front-end development. It demonstrates my ability to build user-friendly web applications and work with real-world design concepts.</p>
+            <p>Link:- <a href="https://github.com/Yadveer1/Projects.git">Spotify Clone</a></p>
+          </div>
+        </div>
+
+        <div class="content contact">
+          <div class="subcontent">
+            <h3>Contact:-</h3>
+            <p>Email: yadveersinghpawar12345@gmail.com</p>
+            <p>Phone: 9171116006</p>
+          </div>
+        </div>
+        
+        <div class="content github">
+          <div class="subcontent">
+            <h3>Github:-</h3>
+            <a href="https://github.com/Yadveer1"> Github Link</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </body>
+</html>
