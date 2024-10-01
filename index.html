@@ -1,373 +1,385 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-      rel="stylesheet"
-    />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
   <style>
     * {
-      margin: 0;
-      padding: 0;
-    }
-    #check, .cb{
-        display: none;
-    }
-    .main_box {
-        background: url("back.png");
-        height: 100vh; 
-        background-size: cover;
-        display: flex;
-    }
-    /* ABOUT */
-    .about {
-        font-family: "Poppins", sans-serif;
-        position:absolute;
-        right: 370px;
-        width: 900px;
-        height: fit-content;
-        background-color: rgba(255, 255, 255,0.65);
-        transition: all 0.5s ease-in-out;
-        border-radius: 15px;
-        top: 100px
-    }
-    .cb:checked ~ .about {
-        top: 10px;
-    }
-    .about:hover {
-        cursor: default;
-    }
-    .about h1{
-        margin: 5px 0 0 10px;
-    }
-    .about h3,.about p {
-        margin-left: 10px;
-        line-height: 23px;
-    }
-    .about p {
-        margin-bottom: 5px;
-    }
-    /* END */
-    .sidebar_menu {
-        left: -360px;
-        position: fixed;
-        width: 350px;
-        background-color: rgba(255, 255, 255, 0.4);
-        height: 100vh;
-        transition: all 0.5s ease-in-out;
-    }
-    .sidebar_menu .logo a{
-        color: black;
-        text-decoration: none;
-        font-size: 30px;
-        font-family: "Poppins", sans-serif;
-        position: absolute;
-        left: 130px;
-        top: 20px;
-        border-radius: 20px;
-        padding: 0 10px 0;
-        cursor: default;
-    }
-    .btn_one {
-        position: absolute;
-        font-size: 35px;
-        margin: 10px;
-        left: 16px;
-        line-height: 60px;
-        color: red
-    }
-    .btn_one label i,.btn_two label i {
-        cursor: pointer;
-    }
-    .btn_two {
-        font-size: 30px;
-        position: absolute;
-        left: 320px;
-    }
-    .menu i {
-        padding-top: 4px;
-    }
-    .menu ul li p {
-        padding-left: 10px;
-        color: black;
-        text-decoration: none;
-        font-family: "Poppins", sans-serif;
-    }
-    .menu ul li div {
-        display: flex;
-    }
-    .menu ul li div:hover {
-        cursor: pointer;
-    }
-    .sidebar_menu .menu {
-        position: absolute;
-        /* color: white; */
-        width: 100%;
-        top: 80px;
-    }
-    .sidebar_menu .menu li {
-        border-radius: 8px;
-        padding: 12px 25px;
-        margin-top: 8px;
-    }
-    /* SOCIAL MEDIA ICONS */
-    .social_media {
-        position: absolute;
-        top: 500px;
-        left: 120px;
-    }
-    .social_media a{
-        color: rgba(0, 0, 0, 0.7);
-        font-size: 30px;
-        padding: 5px;
-    }
-    .social_media a:hover{
-        color: rgb(0,0,0);
-    }
-    .social_media a i:hover {
-        transform: scale(1.35);
-        transition: 0.3s ease-in-out;
-    }
-    /* END */
-    .sidebar_menu .menu ul li:hover {
-        box-shadow: 0px 0px 8px blue;
-        transition: 0.4s;
-    }
-    #check:checked ~ .sidebar_menu {
-        left:0;
-    }
-    #check:checked ~ .btn_one {
-        opacity: 0;
-    }
-    #check:checked ~ .sidebar_menu .btn_two{
-        opacity: 1;
-    }
-    #check:checked ~ .about{
-        right: 135px;
-    }
-    #check:checked ~ .about .hide {
-        display: none;
-    }
-    .options {
-        display: none;
-        margin: 10px;
-        position: absolute;
-        width: 76%;
-        background-color: rgba(129, 169, 250, 0.5);
-        bottom: 0px;
-        left:-1800px;
-        height: fit-content;
-        transition: all 0.5s ease-in-out;
-        border-radius: 15px;
-    }
-    #check:checked ~ .options {
-        display: block;
-    }
-    .cb:checked ~ .options{
-        left: 350px;
-    }
-    .content {
-        left: -900px;
-        padding-top: 5px;
-        display: none;
-        font-family: "Poppins", sans-serif;
-        font-weight: 400;
-    }
-    .cb:checked ~ .content {
-        left: 0px;
-    }
-    .subcontent {
-        overflow: auto;
-    }
-    .subcontent:hover {
-        border-radius: 10px;
-    }
-    .subcontent:hover {
-        background-color: rgba(255, 255, 255, 0.5);
-        border-radius: 10px;
-    }
-    a {
-        text-decoration: none;
-    }
-    .subcontent a:hover {
-        color: blueviolet;
-    }
+    margin: 0px;
+    padding: 0px;
+}
+/* IMAGE */
 
-    .subcontent h3 {
-        padding: 5px 0 0 5px;
-    }
-    .subcontent p, .subcontent a {
-        padding: 0 0 5px 5px;
-    }
-    .subcontent {
-        margin: 10px;
-    }
+/* HEADER */
+.header {
+    background: linear-gradient(170deg, rgb(255, 97, 97), rgb(255, 183, 59));
+    height: 55px;
+    /* position: sticky; */
+    /* top: 0; */
+    z-index: 100;
+}
+/* .header:hover {
+    background: linear-gradient(170deg, rgb(32, 195, 255), rgb(255, 50, 163));
+} */
+.header ul {
+    display: flex;
+}
+.header ul .btn {
+    margin: 12px 25px 0 25px;
+    background-color: white;
+    width: fit-content;
+    padding: 0px 15px;
+    border-radius: 20px;
+    background: linear-gradient(45);
+    height: 30px;
+    border: 2px solid black;
+    
+}
+.header ul .btn:hover {
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    transform: scale(1.2);
+    box-shadow: 2px 2px 5px rgb(0, 76, 255);
+}
+.header ul div p {
+    margin-top: 5px;
+    font-size: 16px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 500;
+}
+/* .header div {
+    position: absolute;
+    right: 20px;
+} */
 
-    #check1:checked ~ .options .skills{
-        display: contents;
-        opacity: 1;
-    }
-    #check2:checked ~ .options .experience{
-        display: contents;
-        opacity: 1;
-    }
-    #check3:checked ~ .options .project{
-        opacity: 1;
-        display: contents;
-    }
-    #check4:checked ~ .options .contact{
-        display: contents;
-        opacity: 1;
-    }
-    #check5:checked ~ .options .github{
-        display: contents;
-        opacity: 1;
-    }
+/* HOME */
+.main_home {
+    /* background: linear-gradient(141deg,#ff0730, #00d4ff, #12099e); */
+    background: linear-gradient(180deg,rgb(255, 176, 58), rgb(255, 29, 29),rgb(230, 230, 0), rgb(4, 255, 4),rgb(40, 40, 255) );
+    height: fit-content;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+}
+.home {
+    height: 700px;
+    width: 100%;
+    display: flex;
+}
+.data_home {
+    margin: auto;
+    margin-top: 200px;
+    height: fit-content;
+    padding: 20px;
+    text-align: left;
+    background-color: white;
+    border-radius: 30px;
+    font-family: "Fredoka", sans-serif
+}
+.hi {
+    font-size: 35px;
+}
+.name {
+    font-size: 80px;
+}
+.dis {
+    font-size: 20px;
+    text-align: right;
+}
+/* ABOUT */
+.about {
+    height: 500px;
+    width: 100%;
+}
+.data_about {
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;    
+    background-color: white;
+    opacity: 1;
+    width: 1000px;
+}
+.data_about h1 {
+    font-weight: 500;
+}
+/* SKILL */
+.skill {
+    margin-top: 50px;
+    height: 300px;
+    width: 100%;
+}
+.data_skill {
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;    
+    background-color: white;
+    opacity: 0.9;
+    width: 1000px;
+}
+.data_skill h1 {
+    font-weight: 500;
+}
+/* EXPERIENCE */
+.exp {
+    height: 300px;
+    width: 100%;
+}
+.data_exp {
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;    
+    background-color: white;
+    opacity: 0.9;
+    width: 1000px;
+}
+.data_exp h1 {
+    font-weight: 500;
+}
+/* PROJECT */
+.project {
+    height: fit-content;
+    width: 100%;
+}
+.data_project {
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;    
+    background-color: white;
+    /* opacity: 0.9; */
+    width: 1000px;
+}
+.data_project h1 {
+    font-weight: 500;
+}
+.simg {
+    border-radius: 15px;
+    width: 1000px;
+    opacity: 1;
+}
+/* CONTACT */
+.contact {
+    margin-top: 150px;
+    height: fit-content;
+    width: 100%;
+}
+.data_contact {
+    margin: auto;
+    padding: 20px;
+    border-radius: 20px;
+    height: fit-content;    
+    background-color: white;
+    opacity: 0.9;
+    width: 1000px;
+}
+.data_contact h1 {
+    font-weight: 500;
+}
+.inp {
+    padding: 0 7px;
+    border-radius: 50px;
+    border: 2px solid black;
+    width: 300px;
+    height: 25px;
+}
+#feedback {
+    appearance: none;
+    padding: 5px;
+    border-radius: 10px;
+    height: 150px;
+    width: 990px;
+    border: 2px solid black;
+}
+#btn{
+	background-color:rgba(255,255,255,0.10);
+	color:Black;
+	border-radius:40px;
+	position:relative;
+    left: 450px;
+	border:none;
+	font-size:20px;
+    height: 40px;
+    width: 100px;
+	cursor:pointer;
+    border: 2px solid black;
+}
+
+#btn:hover{
+	background:linear-gradient(90deg,#08ff08,#50e3fc,#bc13fe,#03a9f4,#0ff0fc);
+	background-size: 500%;
+	z-index:1;
+    transition: ease-in-out;
+	animation:blink 4s linear infinite;
+    border: none;
+    color: white;
+}
+
+@keyframes blink{
+	from{
+		background-position: 0%;
+	}
+	to{
+		background-position: 200%;
+	}
+}
+
+#btn:after{
+	content:"";
+	position:absolute;
+	left:0px;
+	right:0px;
+	top:0px;
+    bottom: 0px;
+	background: inherit;
+	border-radius:40px;
+	filter:blur(50px);
+	opacity:0;
+}
+#btn:hover::after{
+	opacity:1;
+	z-index:-1;
+}
+/* FOOTER */
+.footer {
+    margin: auto;
+    margin-top: 15px;
+    width: 98%;
+    height: 100px;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+.footer a {
+    font-size: 14px;
+    text-decoration: none;
+    color: black;
+}
+.footer a:hover {
+    color: purple;
+    text-decoration: underline;
+}
+.footer p {
+    font-size: 14px;
+}
   </style>
-  <body>
-    <div class="main_box">
-      <input type="checkbox" id="check" />
-      <input type="checkbox" class="cb" id="check1" />
-      <input type="checkbox" class="cb" id="check2" />
-      <input type="checkbox" class="cb" id="check3" />
-      <input type="checkbox" class="cb" id="check5" />
-      <input type="checkbox" class="cb" id="check4" />
-      <div class="about">
-        <h1>Yadveer Singh Pawar</h1>
-        <h3>About</h3>
-        <p>I am a passionate and motivated web developer currently enhancing my skills in front-end and back-end technologies. My journey in web development began with a curiosity about how websites are built and a drive to create user-friendly, responsive, and dynamic web applications.</p>
-        <p class="hide">What I'm Learning in the my 3rd Semester:<br>
-          Languages: HTML, CSS, JavaScript, SQL<br>
-          Frameworks/Libraries: React, Node.js, Express, Bootstrap, Tailwind CSS, MongoDB<br>
-          Tools: GitHub, VS Code</p>
-        <p class="hide">What Excites Me:<br>
-          I am particularly excited about the intersection of design and functionality in web development. Creating visually appealing, yet highly functional websites is a challenge I am eager to master.
-        </p>
-        <p class="hide">My Goals:<br>
-          I am committed to continuous learning, My goal is to become a full-stack developer and contribute to innovative projects that make a difference.
-        </p>
-      </div>
-      <div class="btn_one">
-        <label for="check">
-          <i class="fa-solid fa-bars"></i>
-        </label>
-      </div>
-
-      <div class="sidebar_menu">
-        <div class="logo">
-          <a href="#">Menu</a>
+</head>
+<body>
+    <!-- HEADER -->
+    <div class="header">
+        <div>
+            <ul>
+                <div class="btn"><p>Home</p></div>
+                <div class="btn"><p>About</p></div>
+                <div class="btn"><p>Skills</p></div>
+                <div class="btn"><p>Experience</p></div>
+                <div class="btn"><p>Projects</p></div>
+                <div class="btn"><p>Contact</p></div>
+            </ul>
         </div>
-
-        <div class="btn_two">
-          <label for="check" style="color: black">
-            <i class="fa-solid fa-xmark"></i>
-          </label>
-        </div>
-
-        <div class="menu">
-          <ul>
-            <li>
-              <label for="check1">
-                <div>
-                  <i class="fa-solid fa-book"></i>
-                  <p>Skills</p>
-                </div>
-              </label>
-            </li>
-            <li>
-              <label for="check2">
-                <div>
-                  <i class="fa-solid fa-timeline"></i>
-                  <p>Experience</p>
-                </div>
-              </label>
-            </li>
-            <li>
-              <label for="check3">
-                <div>
-                  <i class="fa-solid fa-photo-film"></i>
-                  <p>Projects</p>
-                </div>
-              </label>
-            </li>
-            <li>
-              <label for="check4">
-                <div>
-                  <i class="fa-solid fa-phone"></i>
-                  <p>Contact</p>
-                </div>
-              </label>
-            </li>
-            <li>
-              <label for="check5">
-                <div>
-                  <i class="fa-brands fa-github"></i>
-                  <p>Github</p>
-                </div>
-              </label>
-            </li>
-          </ul>
-        </div>
-
-        <div class="social_media">
-          <div>
-            <a class="git" href="https://github.com/Yadveer1"><i class="fa-brands fa-github"></i></i></i></a>
-            <a class="link" href="https://www.linkedin.com/in/yadveersingh"><i class="fa-brands fa-linkedin-in"></i></i></a>
-          </div>
-        </div>
-      </div>
-      <div class="options">
-        <div class="content skills">
-          <div class="subcontent">
-            <h3>Skills:-</h3>
-            <p>I am currently a beginner Web developer. I am well known with HTML5 and CSS, and learning JavaScript.</p>
-          </div>
-        </div>
-
-        <div class="content experience">
-          <div class="subcontent">
-            <h3>Experience:-</h3>
-            <p>I had the opportunity to lead a team of four in the NEXGen Engineers Quiz competition, where we successfully ranked among the top 5 teams out of 20. As the team leader, I coordinated our efforts and helped drive our strategy, showcasing teamwork, leadership, and problem-solving skills under pressure.</p>
-          </div>
-        </div>
-
-        <div class="content project">
-          <div class="subcontent">
-            <h3>Project:-</h3>
-            <p>I developed a Spotify clone website utilizing CSS and JavaScript, replicating the core design of the music platform. This project enhanced my skills in front-end development. It demonstrates my ability to build user-friendly web applications and work with real-world design concepts.</p>
-            <p>Link:- <a href="https://github.com/Yadveer1/Projects.git">Spotify Clone</a></p>
-          </div>
-        </div>
-
-        <div class="content contact">
-          <div class="subcontent">
-            <h3>Contact:-</h3>
-            <p>Email: yadveersinghpawar12345@gmail.com</p>
-            <p>Phone: 9171116006</p>
-          </div>
-        </div>
-        
-        <div class="content github">
-          <div class="subcontent">
-            <h3>Github:-</h3>
-            <a href="https://github.com/Yadveer1"> Github Link</a>
-          </div>
-        </div>
-
-      </div>
     </div>
-  </body>
+
+    <div class="main_home">
+         <!-- Home -->
+         <div class="home">
+            <div class="data_home">
+                <p class="hi">Hi, My name is</p>
+                <p class="name">Yadveer Singh Pawar</p>
+                <p class="dis">Front End Web Developer</p>
+            </div>
+        </div>
+        <!-- About -->
+        <div class="about">
+            <div class="data_about">
+                <h1>About</h1>
+                <p>I am a passionate and motivated web developer currently enhancing my skills in front-end and back-end technologies. My journey in web development began with a curiosity about how websites are built and a drive to create user-friendly, responsive, and dynamic web applications.
+                    What I'm Learning in the my 3rd Semester:
+                    <br>
+                    <br>
+                    Languages: HTML, CSS, JavaScript, SQL
+                    Frameworks/Libraries: React, Node.js, Express, Bootstrap, Tailwind CSS, MongoDB
+                    Tools: GitHub, VS Code
+                    <br>
+                    <br>
+                    What Excites Me:
+                    I am particularly excited about the intersection of design and functionality in web development. Creating visually appealing, yet highly functional websites is a challenge I am eager to master.
+                    <br>
+                    <br>
+                    My Goals:
+                    I am committed to continuous learning, My goal is to become a full-stack developer and contribute to innovative projects that make a difference.
+                </p>
+            </div>
+        </div>
+        <!-- Skills -->
+         <div class="skill">
+            <div class="data_skill">
+                <h1>Skills</h1>
+                <p>
+                    Currently a beginner Web developer. I am well known with HTML5 and CSS, and learning JavaScript.
+                </p>
+                <p>
+                    I also known C++ and C language
+                </p>
+            </div>
+         </div>
+        <!-- Experience -->
+        <div class="exp">
+            <div class="data_exp">
+                <h1>Experience</h1>
+                <p>
+                    I had the opportunity to lead a team of four in the NEXGen Engineers Quiz competition, where we successfully ranked among the top 5 teams out of 20. As the team leader, I coordinated our efforts and helped drive our strategy, showcasing teamwork, leadership, and problem-solving skills under pressure.
+                </p>
+            </div>
+        </div>
+        <!-- Projects -->
+        <div class="project">
+            <div class="data_project">
+                <h1>Project</h1>
+                <p>
+                    I developed a Spotify clone website utilizing HTML and CSS, replicating the core design of the music platform. This project enhanced my skills in front-end development. It demonstrates my ability to build user-friendly web applications and work with real-world design concepts.                
+                </p>
+                <p>Link:- <a class="spotify" href="https://yadveer1.github.io/Projects/"> Spotify Link</a></p>
+                <a href="https://yadveer1.github.io/Projects">
+                    <img class="simg" src="spotify.png" >
+                </a>
+            </div>
+        </div>
+        <!-- Contact -->
+        <div class="contact">
+            <div class="data_contact">
+                <h1>Contact me:</h1>
+                    <form>
+                        <input class="inp" type="text" placeholder="Enter your name" >
+                        <input class="inp" type="text" placeholder="Enter your email" >
+                        <br>
+                        <br>
+                        <label for="feedback">Give Feedback</label>
+                        <br>
+                        <textarea id="feedback"  placeholder="Type feedback" ></textarea>
+                        <br>
+                        <button id="btn" >Submit</button>
+                    </form>
+            </div>
+        </div>
+        <!-- Footer -->
+         <div class="footer">
+             <div>
+                 <a href="https://yadveer1.github.io/Portfolio-Website/" >https://yadveer1.github.io/Portfolio-Website</a>
+                 <p>All rights reserved</p>
+             </div>
+         </div>
+        
+
+    </div>
+    <script src="index.js"></script>
+</body>
 </html>
