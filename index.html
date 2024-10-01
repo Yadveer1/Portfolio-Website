@@ -11,24 +11,49 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <style>
-    * {
+	<style>
+		* {
     margin: 0px;
     padding: 0px;
+}
+html {
+    scroll-behavior: smooth;
 }
 /* IMAGE */
 
 /* HEADER */
-.header {
-    background: linear-gradient(170deg, rgb(255, 97, 97), rgb(255, 183, 59));
-    height: 55px;
-    /* position: sticky; */
-    /* top: 0; */
-    z-index: 100;
+.main_header {
+    display: flex;
+    justify-content: center;
+    height: 75px;
 }
-/* .header:hover {
-    background: linear-gradient(170deg, rgb(32, 195, 255), rgb(255, 50, 163));
-} */
+.header {
+    border-radius: 10px;
+    position: absolute;
+    top: 9px;
+    background: linear-gradient(175deg, rgb(255, 82, 82),rgb(76, 246, 254), rgb(74, 74, 255));
+    height: 60px;
+    width: 99%;
+    display: flex;
+}
+.port {
+    z-index: 0;
+    position: relative;
+    background-color: rgba(255,255,255,0.3);
+    padding: 5px;
+    border-radius: 10px;
+    height: fit-content;
+    top: 10px;
+    left: 40px;
+    font-size: 25px;
+    font-family: "Fredoka", sans-serif;
+    width: fit-content;
+}
+.port:hover{
+    transition: 0.2s ease-in-out 0.1s;
+    transform: scale(1.05);
+    background-color: rgba(255,255,255,0.8);
+}
 .header ul {
     display: flex;
 }
@@ -40,33 +65,39 @@
     border-radius: 20px;
     background: linear-gradient(45);
     height: 30px;
-    border: 2px solid black;
-    
 }
 .header ul .btn:hover {
     cursor: pointer;
     transition: 0.2s ease-in-out;
     transform: scale(1.2);
-    box-shadow: 2px 2px 5px rgb(0, 76, 255);
+    box-shadow: 2px 2px 5px rgb(0, 0,0);
 }
-.header ul div p {
-    margin-top: 5px;
+.header .sub_head ul div a {
+    position: relative;
+    top:3px;
+    color: black;
+    text-decoration: none;
     font-size: 16px;
-    font-family: "Roboto", sans-serif;
+    font-family: "Fredoka", sans-serif;
     font-weight: 500;
 }
-/* .header div {
+.header .sub_head {
     position: absolute;
     right: 20px;
-} */
+}
 
 /* HOME */
 .main_home {
+    z-index: 5;
     /* background: linear-gradient(141deg,#ff0730, #00d4ff, #12099e); */
-    background: linear-gradient(180deg,rgb(255, 176, 58), rgb(255, 29, 29),rgb(230, 230, 0), rgb(4, 255, 4),rgb(40, 40, 255) );
+    background: linear-gradient(180deg,rgb(255, 176, 58), rgb(255, 40, 40),rgb(230, 230, 0), rgb(40, 255, 40),rgb(40, 40, 255) );
     height: fit-content;
     width: 100%;
     font-family: "Poppins", sans-serif;
+}
+.main_home > div {
+    display: flex;
+    justify-content: center;
 }
 .home {
     height: 700px;
@@ -74,15 +105,41 @@
     display: flex;
 }
 .data_home {
+    z-index: 0;
     margin: auto;
     margin-top: 200px;
-    height: fit-content;
+    height: 156px;
+    width: 768px;
     padding: 20px;
     text-align: left;
     background-color: white;
     border-radius: 30px;
-    font-family: "Fredoka", sans-serif
+    font-family: "Fredoka", sans-serif;
 }
+.data_home p {
+    color: white;
+}
+.vid {
+    position: absolute;
+    top: 278px;
+    left: 361px;
+    z-index: -5;
+    border-radius: 30px;
+    background-size: contain;
+    width: 800px;
+}
+/* @media (min-aspect-ratio: 16/9) {
+    .vid {
+        width: 400px;
+        height: auto;
+    }
+}
+@media (max-aspect-ratio: 5/6) {
+    .vid {
+        width: auto;
+        height: 100%;
+    }
+} */
 .hi {
     font-size: 35px;
 }
@@ -170,7 +227,7 @@
 /* CONTACT */
 .contact {
     margin-top: 150px;
-    height: fit-content;
+    height: 450px;
     width: 100%;
 }
 .data_contact {
@@ -255,9 +312,13 @@
     margin-top: 15px;
     width: 98%;
     height: 100px;
-    background-color: white;
+}
+.footer div {
     text-align: center;
     border-radius: 15px;
+    height: 70px;
+    width: 99%;
+    background-color: white;
 }
 .footer a {
     font-size: 14px;
@@ -270,35 +331,51 @@
 }
 .footer p {
     font-size: 14px;
+} 
+/* Scroolbar */
+::-webkit-scrollbar{
+    width: 15px;
 }
-  </style>
+::-webkit-scrollbar-track{
+background: #d1e5ff;
+}
+::-webkit-scrollbar-thumb{
+background: linear-gradient(#642bff,#ff22e6) ;
+border-radius: 10px;
+width: 5px;
+}
+	</style>
 </head>
 <body>
-    <!-- HEADER -->
-    <div class="header">
-        <div>
-            <ul>
-                <div class="btn"><p>Home</p></div>
-                <div class="btn"><p>About</p></div>
-                <div class="btn"><p>Skills</p></div>
-                <div class="btn"><p>Experience</p></div>
-                <div class="btn"><p>Projects</p></div>
-                <div class="btn"><p>Contact</p></div>
-            </ul>
-        </div>
-    </div>
-
+    
     <div class="main_home">
+        <!-- HEADER -->
+         <div class="main_header">
+             <div class="header">
+                 <div class="port"><p>Yadveer's Portfolio</p></div>
+                 <div class="sub_head">
+                     <ul>
+                         <div class="btn"><a href="#home" >Home</a></div>
+                         <div class="btn"><a href="#about">About</a></div>
+                         <div class="btn"><a href="#skill">Skills</a></div>
+                         <div class="btn"><a href="#exp">Experience</a></div>
+                         <div class="btn"><a href="#project">Projects</a></div>
+                         <div class="btn"><a href="#contact">Contact</a></div>
+                     </ul>
+                 </div>
+             </div>
+         </div>
          <!-- Home -->
-         <div class="home">
+         <div class="home" id="home">
             <div class="data_home">
+                <video class="vid" autoplay loop muted plays-inline> <source src="vid3.mp4" type="video/mp4"></video>
                 <p class="hi">Hi, My name is</p>
                 <p class="name">Yadveer Singh Pawar</p>
                 <p class="dis">Front End Web Developer</p>
             </div>
         </div>
         <!-- About -->
-        <div class="about">
+        <div class="about" id="about">
             <div class="data_about">
                 <h1>About</h1>
                 <p>I am a passionate and motivated web developer currently enhancing my skills in front-end and back-end technologies. My journey in web development began with a curiosity about how websites are built and a drive to create user-friendly, responsive, and dynamic web applications.
@@ -320,7 +397,7 @@
             </div>
         </div>
         <!-- Skills -->
-         <div class="skill">
+         <div class="skill" id="skill">
             <div class="data_skill">
                 <h1>Skills</h1>
                 <p>
@@ -332,7 +409,7 @@
             </div>
          </div>
         <!-- Experience -->
-        <div class="exp">
+        <div class="exp" id="exp">
             <div class="data_exp">
                 <h1>Experience</h1>
                 <p>
@@ -341,7 +418,7 @@
             </div>
         </div>
         <!-- Projects -->
-        <div class="project">
+        <div class="project" id="project">
             <div class="data_project">
                 <h1>Project</h1>
                 <p>
@@ -354,7 +431,7 @@
             </div>
         </div>
         <!-- Contact -->
-        <div class="contact">
+        <div class="contact" id="contact">
             <div class="data_contact">
                 <h1>Contact me:</h1>
                     <form>
