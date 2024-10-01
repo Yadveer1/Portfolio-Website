@@ -11,346 +11,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<style>
-		* {
-    margin: 0px;
-    padding: 0px;
-}
-html {
-    scroll-behavior: smooth;
-}
-/* IMAGE */
-
-/* HEADER */
-.main_header {
-    display: flex;
-    justify-content: center;
-    height: 75px;
-}
-.header {
-    border-radius: 10px;
-    position: absolute;
-    top: 9px;
-    background: linear-gradient(175deg, rgb(255, 82, 82),rgb(76, 246, 254), rgb(74, 74, 255));
-    height: 60px;
-    width: 99%;
-    display: flex;
-}
-.port {
-    z-index: 0;
-    position: relative;
-    background-color: rgba(255,255,255,0.3);
-    padding: 5px;
-    border-radius: 10px;
-    height: fit-content;
-    top: 10px;
-    left: 40px;
-    font-size: 25px;
-    font-family: "Fredoka", sans-serif;
-    width: fit-content;
-}
-.port:hover{
-    transition: 0.2s ease-in-out 0.1s;
-    transform: scale(1.05);
-    background-color: rgba(255,255,255,0.8);
-}
-.header ul {
-    display: flex;
-}
-.header ul .btn {
-    margin: 12px 25px 0 25px;
-    background-color: white;
-    width: fit-content;
-    padding: 0px 15px;
-    border-radius: 20px;
-    background: linear-gradient(45);
-    height: 30px;
-}
-.header ul .btn:hover {
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    transform: scale(1.2);
-    box-shadow: 2px 2px 5px rgb(0, 0,0);
-}
-.header .sub_head ul div a {
-    position: relative;
-    top:3px;
-    color: black;
-    text-decoration: none;
-    font-size: 16px;
-    font-family: "Fredoka", sans-serif;
-    font-weight: 500;
-}
-.header .sub_head {
-    position: absolute;
-    right: 20px;
-}
-
-/* HOME */
-.main_home {
-    z-index: 5;
-    /* background: linear-gradient(141deg,#ff0730, #00d4ff, #12099e); */
-    background: linear-gradient(180deg,rgb(255, 176, 58), rgb(255, 40, 40),rgb(230, 230, 0), rgb(40, 255, 40),rgb(40, 40, 255) );
-    height: fit-content;
-    width: 100%;
-    font-family: "Poppins", sans-serif;
-}
-.main_home > div {
-    display: flex;
-    justify-content: center;
-}
-.home {
-    height: 700px;
-    width: 100%;
-    display: flex;
-}
-.data_home {
-    z-index: 0;
-    margin: auto;
-    margin-top: 200px;
-    height: 156px;
-    width: 768px;
-    padding: 20px;
-    text-align: left;
-    background-color: white;
-    border-radius: 30px;
-    font-family: "Fredoka", sans-serif;
-}
-.data_home p {
-    color: white;
-}
-.vid {
-    position: absolute;
-    top: 278px;
-    left: 23.7%;
-    z-index: -5;
-    border-radius: 30px;
-    background-size: contain;
-    width: 800px;
-}
-/* @media (min-aspect-ratio: 16/9) {
-    .vid {
-        width: 400px;
-        height: auto;
-    }
-}
-@media (max-aspect-ratio: 5/6) {
-    .vid {
-        width: auto;
-        height: 100%;
-    }
-} */
-.hi {
-    font-size: 35px;
-}
-.name {
-    font-size: 80px;
-}
-.dis {
-    font-size: 20px;
-    text-align: right;
-}
-/* ABOUT */
-.about {
-    height: 500px;
-    width: 100%;
-}
-.data_about {
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    height: fit-content;    
-    background-color: white;
-    opacity: 1;
-    width: 1000px;
-}
-.data_about h1 {
-    font-weight: 500;
-}
-/* SKILL */
-.skill {
-    margin-top: 50px;
-    height: 300px;
-    width: 100%;
-}
-.data_skill {
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    height: fit-content;    
-    background-color: white;
-    opacity: 0.9;
-    width: 1000px;
-}
-.data_skill h1 {
-    font-weight: 500;
-}
-/* EXPERIENCE */
-.exp {
-    height: 300px;
-    width: 100%;
-}
-.data_exp {
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    height: fit-content;    
-    background-color: white;
-    opacity: 0.9;
-    width: 1000px;
-}
-.data_exp h1 {
-    font-weight: 500;
-}
-/* PROJECT */
-.project {
-    height: fit-content;
-    width: 100%;
-}
-.data_project {
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    height: fit-content;    
-    background-color: white;
-    /* opacity: 0.9; */
-    width: 1000px;
-}
-.data_project h1 {
-    font-weight: 500;
-}
-.simg {
-    border-radius: 15px;
-    width: 1000px;
-    opacity: 1;
-}
-/* CONTACT */
-.contact {
-    margin-top: 150px;
-    height: 450px;
-    width: 100%;
-}
-.data_contact {
-    margin: auto;
-    padding: 20px;
-    border-radius: 20px;
-    height: fit-content;    
-    background-color: white;
-    opacity: 0.9;
-    width: 1000px;
-}
-.data_contact h1 {
-    font-weight: 500;
-}
-.inp {
-    padding: 0 7px;
-    border-radius: 50px;
-    border: 2px solid black;
-    width: 300px;
-    height: 25px;
-}
-#feedback {
-    appearance: none;
-    padding: 5px;
-    border-radius: 10px;
-    height: 150px;
-    width: 990px;
-    border: 2px solid black;
-}
-#btn{
-	background-color:rgba(255,255,255,0.10);
-	color:Black;
-	border-radius:40px;
-	position:relative;
-    left: 450px;
-	border:none;
-	font-size:20px;
-    height: 40px;
-    width: 100px;
-	cursor:pointer;
-    border: 2px solid black;
-}
-
-#btn:hover{
-	background:linear-gradient(90deg,#08ff08,#50e3fc,#bc13fe,#03a9f4,#0ff0fc);
-	background-size: 500%;
-	z-index:1;
-    transition: ease-in-out;
-	animation:blink 4s linear infinite;
-    border: none;
-    color: white;
-}
-
-@keyframes blink{
-	from{
-		background-position: 0%;
-	}
-	to{
-		background-position: 200%;
-	}
-}
-
-#btn:after{
-	content:"";
-	position:absolute;
-	left:0px;
-	right:0px;
-	top:0px;
-    bottom: 0px;
-	background: inherit;
-	border-radius:40px;
-	filter:blur(50px);
-	opacity:0;
-}
-#btn:hover::after{
-	opacity:1;
-	z-index:-1;
-}
-/* FOOTER */
-.footer {
-    margin: auto;
-    margin-top: 15px;
-    width: 98%;
-    height: 100px;
-}
-.footer div {
-    text-align: center;
-    border-radius: 15px;
-    height: 70px;
-    width: 99%;
-    background-color: white;
-}
-.footer a {
-    font-size: 14px;
-    text-decoration: none;
-    color: black;
-}
-.footer a:hover {
-    color: purple;
-    text-decoration: underline;
-}
-.footer p {
-    font-size: 14px;
-} 
-/* Scroolbar */
-::-webkit-scrollbar{
-    width: 15px;
-}
-::-webkit-scrollbar-track{
-background: #d1e5ff;
-}
-::-webkit-scrollbar-thumb{
-background: linear-gradient(#642bff,#ff22e6) ;
-border-radius: 10px;
-width: 5px;
-}
-	</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- Arrow -->
+     <div class="arr">
+         <a id="btt" href="#"><i class="fa-solid fa-arrow-up"></i></a>
+    </div>
+    <!-- Hover -->
+    <div class="hover">
+        <ul>
+            <div class="hbtn"><a href="#home" >Home</a></div>
+            <div class="hbtn"><a href="#about">About</a></div>
+            <div class="hbtn"><a href="#skill">Skills</a></div>
+            <div class="hbtn"><a href="#exp">Experience</a></div>
+            <div class="hbtn"><a href="#project">Projects</a></div>
+            <div class="hbtn"><a href="#contact">Contact</a></div>
+        </ul>
+    </div>
     <div class="main_home">
         <!-- HEADER -->
-         <div class="main_header">
+        <div class="main_header">
              <div class="header">
                  <div class="port"><p>Yadveer's Portfolio</p></div>
                  <div class="sub_head">
@@ -364,9 +45,9 @@ width: 5px;
                      </ul>
                  </div>
              </div>
-         </div>
-         <!-- Home -->
-         <div class="home" id="home">
+        </div>
+        <!-- Home -->
+        <div class="home" id="home">
             <div class="data_home">
                 <video class="vid" autoplay loop muted plays-inline> <source src="vid3.mp4" type="video/mp4"></video>
                 <p class="hi">Hi, My name is</p>
@@ -374,86 +55,88 @@ width: 5px;
                 <p class="dis">Front End Web Developer</p>
             </div>
         </div>
-        <!-- About -->
-        <div class="about" id="about">
-            <div class="data_about">
-                <h1>About</h1>
-                <p>I am a passionate and motivated web developer currently enhancing my skills in front-end and back-end technologies. My journey in web development began with a curiosity about how websites are built and a drive to create user-friendly, responsive, and dynamic web applications.
-                    What I'm Learning in the my 3rd Semester:
-                    <br>
-                    <br>
-                    Languages: HTML, CSS, JavaScript, SQL
-                    Frameworks/Libraries: React, Node.js, Express, Bootstrap, Tailwind CSS, MongoDB
-                    Tools: GitHub, VS Code
-                    <br>
-                    <br>
-                    What Excites Me:
-                    I am particularly excited about the intersection of design and functionality in web development. Creating visually appealing, yet highly functional websites is a challenge I am eager to master.
-                    <br>
-                    <br>
-                    My Goals:
-                    I am committed to continuous learning, My goal is to become a full-stack developer and contribute to innovative projects that make a difference.
-                </p>
-            </div>
-        </div>
-        <!-- Skills -->
-         <div class="skill" id="skill">
-            <div class="data_skill">
-                <h1>Skills</h1>
-                <p>
-                    Currently a beginner Web developer. I am well known with HTML5 and CSS, and learning JavaScript.
-                </p>
-                <p>
-                    I also known C++ and C language
-                </p>
-            </div>
-         </div>
-        <!-- Experience -->
-        <div class="exp" id="exp">
-            <div class="data_exp">
-                <h1>Experience</h1>
-                <p>
-                    I had the opportunity to lead a team of four in the NEXGen Engineers Quiz competition, where we successfully ranked among the top 5 teams out of 20. As the team leader, I coordinated our efforts and helped drive our strategy, showcasing teamwork, leadership, and problem-solving skills under pressure.
-                </p>
-            </div>
-        </div>
-        <!-- Projects -->
-        <div class="project" id="project">
-            <div class="data_project">
-                <h1>Project</h1>
-                <p>
-                    I developed a Spotify clone website utilizing HTML and CSS, replicating the core design of the music platform. This project enhanced my skills in front-end development. It demonstrates my ability to build user-friendly web applications and work with real-world design concepts.                
-                </p>
-                <p>Link:- <a class="spotify" href="https://yadveer1.github.io/Projects/"> Spotify Link</a></p>
-                <a href="https://yadveer1.github.io/Projects">
-                    <img class="simg" src="spotify.png" >
-                </a>
-            </div>
-        </div>
-        <!-- Contact -->
-        <div class="contact" id="contact">
-            <div class="data_contact">
-                <h1>Contact me:</h1>
-                    <form>
-                        <input class="inp" type="text" placeholder="Enter your name" >
-                        <input class="inp" type="text" placeholder="Enter your email" >
+        <div class="main">
+            <!-- About -->
+            <div class="about" id="about">
+                <div class="data_about">
+                    <h1>About</h1>
+                    <p>I am a passionate and motivated web developer currently enhancing my skills in front-end and back-end technologies. My journey in web development began with a curiosity about how websites are built and a drive to create user-friendly, responsive, and dynamic web applications.
+                        What I'm Learning in the my 3rd Semester:
                         <br>
                         <br>
-                        <label for="feedback">Give Feedback</label>
+                        Languages: HTML, CSS, JavaScript, SQL
+                        Frameworks/Libraries: React, Node.js, Express, Bootstrap, Tailwind CSS, MongoDB
+                        Tools: GitHub, VS Code
                         <br>
-                        <textarea id="feedback"  placeholder="Type feedback" ></textarea>
                         <br>
-                        <button id="btn" >Submit</button>
-                    </form>
+                        What Excites Me:
+                        I am particularly excited about the intersection of design and functionality in web development. Creating visually appealing, yet highly functional websites is a challenge I am eager to master.
+                        <br>
+                        <br>
+                        My Goals:
+                        I am committed to continuous learning, My goal is to become a full-stack developer and contribute to innovative projects that make a difference.
+                    </p>
+                </div>
             </div>
-        </div>
-        <!-- Footer -->
-         <div class="footer">
-             <div>
-                 <a href="https://yadveer1.github.io/Portfolio-Website/" >https://yadveer1.github.io/Portfolio-Website</a>
-                 <p>All rights reserved</p>
+            <!-- Skills -->
+             <div class="skill" id="skill">
+                <div class="data_skill">
+                    <h1>Skills</h1>
+                    <p>
+                        Currently a beginner Web developer. I am well known with HTML5 and CSS, and learning JavaScript.
+                    </p>
+                    <p>
+                        I also known C++ and C language
+                    </p>
+                </div>
              </div>
-         </div>
+            <!-- Experience -->
+            <div class="exp" id="exp">
+                <div class="data_exp">
+                    <h1>Experience</h1>
+                    <p>
+                        I had the opportunity to lead a team of four in the NEXGen Engineers Quiz competition, where we successfully ranked among the top 5 teams out of 20. As the team leader, I coordinated our efforts and helped drive our strategy, showcasing teamwork, leadership, and problem-solving skills under pressure.
+                    </p>
+                </div>
+            </div>
+            <!-- Projects -->
+            <div class="project" id="project">
+                <div class="data_project">
+                    <h1>Project</h1>
+                    <p>
+                        I developed a Spotify clone website utilizing HTML and CSS, replicating the core design of the music platform. This project enhanced my skills in front-end development. It demonstrates my ability to build user-friendly web applications and work with real-world design concepts.                
+                    </p>
+                    <p>Link:- <a class="spotify" href="https://yadveer1.github.io/Projects/"> Spotify Link</a></p>
+                    <a href="https://yadveer1.github.io/Projects">
+                        <img class="simg" src="spotify.png" >
+                    </a>
+                </div>
+            </div>
+            <!-- Contact -->
+            <div class="contact" id="contact">
+                <div class="data_contact">
+                    <h1>Contact me:</h1>
+                        <form>
+                            <input class="inp" type="text" placeholder="Enter your name" >
+                            <input class="inp" type="text" placeholder="Enter your email" >
+                            <br>
+                            <br>
+                            <label for="feedback">Give Feedback</label>
+                            <br>
+                            <textarea id="feedback"  placeholder="Type feedback" ></textarea>
+                            <br>
+                            <button id="btn"><a href="#">Submit</a></button>
+                        </form>
+                </div>
+            </div>
+            <!-- Footer -->
+             <div class="footer">
+                 <div>
+                     <a href="https://yadveer1.github.io/Portfolio-Website/" >https://yadveer1.github.io/Portfolio-Website</a>
+                     <p>All rights reserved</p>
+                 </div>
+             </div>
+        </div>
         
 
     </div>
