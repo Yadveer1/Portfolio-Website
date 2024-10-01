@@ -35,10 +35,11 @@ html {
     bottom: 20px;
     right: -40px;
     border-radius: 10px; 
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
 }
 .arr:hover {
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
 }
 .arr a i{
     font-size: 25px;
@@ -191,14 +192,15 @@ html {
     position: fixed;
     top: 25%;
     left: -146px;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.6);
     height: fit-content;
-    width: 110px;
+    width: 120px;
     margin: 15px;
     padding: 10px;
     border-radius: 10px;
 }
 .hbtn {
+    transition: 0.2s ease-in-out;
     z-index: 500;
     display: flex;
     justify-content: center;
@@ -211,6 +213,7 @@ html {
 }
 .hbtn:hover, hbtn a:hover {
     cursor: pointer;
+    transform: scale(1.08);
 }
 .hbtn a {
     position: relative;
