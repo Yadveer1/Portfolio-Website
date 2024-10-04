@@ -7,12 +7,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 	<style>
-		* {
+* {
     margin: 0px;
     padding: 0px;
 }
@@ -97,7 +98,7 @@ html {
 .header ul .btn:hover {
     cursor: pointer;
     transition: 0.2s ease-in-out;
-    transform: scale(1.2);
+    transform: scale(1.1);
     box-shadow: 2px 2px 5px rgb(0, 0,0);
 }
 .header .sub_head ul div a {
@@ -136,7 +137,7 @@ html {
 .data_home {
     z-index: 0;
     margin: auto;
-    margin-top: 200px;
+    margin-top: 160px;
     height: 156px;
     width: 768px;
     padding: 20px;
@@ -145,12 +146,38 @@ html {
     border-radius: 30px;
     font-family: "Fredoka", sans-serif;
 }
+.link {
+    position: absolute;
+    top: 500px;
+    height: fit-content;
+    width: fit-content;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 15px;
+    font-family: "Fredoka", sans-serif;
+    padding: 10px;
+}
+.link:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+.link a {
+    text-decoration: none;
+    color: black;
+    padding: 0 8px;
+    font-size: 40px;
+}
+.link a i:hover{
+    transition: 0.2s ease-in-out;
+    transform: scale(1.2);
+}
+.fa-linkedin {
+    color: rgb(2, 52, 146);
+}
 .data_home p {
     color: white;
 }
 .vid {
     position: absolute;
-    top: 278px;
+    top: 238px;
     left: 361px;
     z-index: -5;
     border-radius: 30px;
@@ -453,6 +480,14 @@ width: 5px;
                 <p class="name">Yadveer Singh Pawar</p>
                 <p class="dis">Front End Web Developer</p>
             </div>
+            <div class="link">
+                <a href="https://www.linkedin.com/in/yadveersingh/">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/Yadveer1">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+            </div>
         </div>
         <div class="main">
             <!-- About -->
@@ -539,8 +574,8 @@ width: 5px;
         
 
     </div>
-    <script>
-	    let main = document.querySelector(".main");
+    <script src="index.js">
+let main = document.querySelector(".main");
 let home = document.querySelector(".home");
 let arr = document.querySelector(".arr");
 let hover = document.querySelector(".hover");
@@ -553,7 +588,6 @@ home.addEventListener("mouseenter", () => {
     hover.style.left="-155px";
 });
 
-
-    </script>
+</script>
 </body>
 </html>
